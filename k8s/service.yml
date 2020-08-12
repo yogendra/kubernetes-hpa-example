@@ -8,7 +8,7 @@ spec:
   selector:
     app: node-example
   ports:
-  - port: 3000
-    protocol: TCP
-    nodePort: 30001
-  type: LoadBalancer
+    - name: http
+      port: 3000
+      protocol: TCP
+  type: ClusterIP

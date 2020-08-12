@@ -1,0 +1,17 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: node-example
+  labels:
+    app: node-example
+  annotations:
+    kubernetes.io/ingress.class: contour
+spec:
+  rules:
+    - host: hpa-test.cluster-1.poc.yogendra.me
+      http:
+        paths:
+          - backend:
+              serviceName: node-example
+              servicePort: http
